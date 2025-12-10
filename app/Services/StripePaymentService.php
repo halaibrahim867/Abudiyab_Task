@@ -72,7 +72,9 @@ class StripePaymentService implements PaymentGatewayInterface
 
         $response = Http::withHeaders($this->header)
             ->withOptions(['verify' => false])
-            ->get("https://api.stripe.com/v1/checkout/sessions/{$session_id}");
+            ->get("https://api.stripe.com/v1/checkout/sessions/{$session_id}"); //will change in production , i have problem in ssl
+
+        // $response =$this->buildRequest('POST', '/v1/checkout/sessions', $data, 'form_params');
 
         $res = $response->json();
 
