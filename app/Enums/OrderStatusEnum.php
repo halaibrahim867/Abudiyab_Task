@@ -3,7 +3,13 @@
 namespace App\Enums;
 
 use Spatie\Enum\Laravel\Enum;
-
+/**
+ * @method static self pending()
+ * @method static self processing()
+ * @method static self completed()
+ * @method static self cancelled()
+ * @method static self refunded()
+ */
 final class OrderStatusEnum extends Enum
 {
     public static function values(): array
